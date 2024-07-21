@@ -7,12 +7,13 @@ import authRoutes from "./routes/auth.routes.js";
 import taksRoutes from "./routes/tasks.routes.js";
 import { FRONTEND_URL } from "./config.js";
 
+
 const app = express();
 
 app.use(
   cors({
     credentials: true,
-    origin: FRONTEND_URL //"https://task-aplication-client.vercel.app", 
+    origin:  "https://task-aplication-client.vercel.app" //FRONTEND_URL, 
   })
 );
 app.use(express.json());
