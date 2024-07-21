@@ -12,7 +12,7 @@ const app = express();
 app.use(
   cors({
     credentials: true,
-    origin: "https://task-aplication-client.vercel.app",
+    origin: FRONTEND_URL //"https://task-aplication-client.vercel.app", 
   })
 );
 app.use(express.json());
@@ -27,7 +27,7 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/dist"));
 
   app.get("*", (req, res) => {
-    console.log(path.resolve("client", "dist", "index.html") );
+    
     res.sendFile(path.resolve("client", "dist", "index.html"));
   });
 }
